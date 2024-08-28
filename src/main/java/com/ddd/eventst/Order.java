@@ -23,7 +23,7 @@ public class Order {
         this.lines = StreamSupport.stream(productLines.spliterator(), false)
                 .map(x -> new OrderLine(x.getProduct(), x.getPrice(), x.getQuantity()))
                 .collect(Collectors.toList());
-        // 触发事件
+        // 触发提交订单事件
         DomainEvents.raise(new OrderSubmitted(this));
     }
 
