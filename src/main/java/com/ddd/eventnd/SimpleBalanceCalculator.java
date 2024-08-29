@@ -1,5 +1,6 @@
 package com.ddd.eventnd;
 
+//默认的余额计算器
 public class SimpleBalanceCalculator implements IBalanceCalculator {
     @Override
     public double calculate(Fee fee) {

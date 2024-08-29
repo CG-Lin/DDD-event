@@ -1,5 +1,6 @@
 package com.ddd.eventnd;
 
+//模拟数据库
 public class CustomerRepository implements  ICustomerRepository{
     private Customer customer;
 
