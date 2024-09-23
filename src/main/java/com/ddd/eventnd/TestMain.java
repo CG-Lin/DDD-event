@@ -9,6 +9,10 @@ public class TestMain {
         FeePaidOffHandler handler = new FeePaidOffHandler(customerRepository);
         DomainEvents.register(FeePaidOff.class, handler);
 
+        // 创建并注册新的FeePaidOffEmailNotificationHandler
+        FeePaidOffEmailNotificationHandler emailHandler = new FeePaidOffEmailNotificationHandler();
+        DomainEvents.register(FeePaidOff.class, emailHandler);
+
         // 创建客户并收费
         Customer customer = new Customer();
         customerRepository.setCustomer(customer);

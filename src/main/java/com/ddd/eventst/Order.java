@@ -14,8 +14,14 @@ public class Order {
 
     private List<OrderLine> lines;
 
+    public Customer customer;
+
     public List<OrderLine> getLines() {
         return lines;
+    }
+
+    public Customer getCustomer() {
+        return customer;
     }
 
     public Order(Iterable<ProductLine> productLines) {

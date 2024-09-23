@@ -13,5 +13,4 @@ public class OrderSubmitted implements IDomainEvent{
     public OrderSubmitted(Order order) {
         Order = order;
     }
-
 }
