@@ -16,6 +16,16 @@ public class Fee implements IEntity{
     private List<IDomainEvent> events = new ArrayList<>();
     private double balance;
 
+    public Fee(double amount) {
+        this.payments = new ArrayList<>();
+        this.balance = amount;
+    }
+
+    // 检查是否有未付余额
+    public boolean hasOutstandingBalance() {
+        return balance > 0;
+    }
+
     public Payment recordPayment(double paymentAmount, IBalanceCalculator balanceCalculator) {
         Payment payment = new Payment(paymentAmount);
         payments.add(payment);
