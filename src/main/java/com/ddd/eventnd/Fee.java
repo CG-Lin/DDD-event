@@ -11,12 +11,14 @@ import java.util.List;
  * @menu
  * @date 2024/9/23 23:00
  */
-public class Fee implements IEntity{
+public class Fee implements IEntity {
+    private String Id;
     private List<Payment> payments;
     private List<IDomainEvent> events = new ArrayList<>();
     private double balance;
 
-    public Fee(double amount) {
+    public Fee(String Id, double amount) {
+        this.Id = Id;
         this.payments = new ArrayList<>();
         this.balance = amount;
     }
@@ -49,5 +51,17 @@ public class Fee implements IEntity{
     @Override
     public void clearEvents() {
         events.clear();
+    }
+
+    public String getId() {
+        return Id;
+    }
+
+    public List<Payment> getPayments() {
+        return payments;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 }
